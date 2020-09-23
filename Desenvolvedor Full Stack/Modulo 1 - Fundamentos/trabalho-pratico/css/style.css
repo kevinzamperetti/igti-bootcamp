@@ -1,0 +1,32 @@
+/* body {
+	padding: 10px;
+} */
+
+.container {
+	margin: 10px;
+}
+
+.personal-data {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+}
+
+p {
+	flex: 1;
+}
+.range {
+	margin-right: 50px;
+	flex: 2;
+}
+
+.text {
+	margin-right: 400px;
+	flex: 3;
+}
+
+#color {
+	height: 50px;
+	width: 50px;
+}

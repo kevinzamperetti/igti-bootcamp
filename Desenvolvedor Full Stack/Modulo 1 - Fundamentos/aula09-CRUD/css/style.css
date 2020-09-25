@@ -49,3 +49,15 @@ img {
 	font-weight: bold;
 	color: darkblue;
 }
+
+.delete-button {
+	color: white;
+	font-weight: bold;
+	background-color: darkred;
+	margin-right: 10px;
+	border-radius: 50%;
+}
+
+.clickable {
+	cursor: pointer;
+}

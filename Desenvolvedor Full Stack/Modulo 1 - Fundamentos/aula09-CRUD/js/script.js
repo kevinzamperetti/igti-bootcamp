@@ -3,6 +3,8 @@ window.addEventListener('load', start);
 
 var globalNames = ['Um', 'Dois', 'Três', 'Quatro'];
 var globalInputName = null;
+var isEditing = false;
+var globalCurrentIndex = null;
 
 function start() {
   globalInputName = document.querySelector('#inputName');
@@ -28,9 +30,27 @@ function activateinput() {
     globalNames.push(name);
   }
 
+  function updateName(name) {
+    globalNames[globalCurrentIndex] = name;
+  }
+
   function handleTyping(event) {
-    if (event.key === 'Enter') {
-      insertName(event.target.value);
+
+    var hasText = !!event.target.value &&  event.target.value.trim() !== '';
+    if (!hasText) {
+      clearInput;
+      return;
+    }
+
+    if (event.key === 'Enter' &&) {
+      if (isEditing) {
+        updateName(event.target.value);
+        // render();
+      } else {
+        insertName(event.target.value);
+      }
+      isEditing = false;
+      clearInput();
     }
   }
 
@@ -42,16 +62,29 @@ function render(){
   function createDeleteButton(index) {
     function deleteName() {
       globalNames.splice(index, 1);
-      render();
+      // render();
     }
 
     var button = document.createElement('button');
     button.classList.add('delete-button');
     button.textContent = 'X';
-
     button.addEventListener('click', deleteName);
-
     return button;
+  }
+
+  function createSpan(name, index) {
+    function editItem() {
+      globalInputName.value = name;
+      globalInputName.focus();
+      isEditing = true;
+      globalCurrentIndex = index;
+    }
+
+    var span = document.createElement('span');
+    span.classList.add('clickable');
+    span.textContent = name;
+    span.addEventListener('click', editItem)
+    return span;
   }
 
   var divNames = document.querySelector('#names');
@@ -64,10 +97,7 @@ function render(){
 
     var li = document.createElement('li');
     var button = createDeleteButton(i);
-
-    var span = document.createElement('span');
-    span.classList.add('clickable');
-    span.textContent = currentName;
+    var span = createSpan(currentName, i);
 
     li.appendChild(button);
     li.appendChild(span);
@@ -77,9 +107,11 @@ function render(){
 
   divNames.appendChild(ul);
   clearInput();
+  // render();
 }
 
 function clearInput() {
   globalInputName.value = '';
   globalInputName.focus();
+  // render();  
 }

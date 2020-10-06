@@ -4,6 +4,9 @@ window.addEventListener('load', () => {
     doForEach();
     doReduce();
     doFind();
+    doSome();
+    doEvery();
+    doSort();
 });
 
 function doMap() {
@@ -53,4 +56,32 @@ function doFind() {
     console.log(found);
 }
 
-//parei na Aula 11.3 - Manipulação de arrays com ES6+
+function doSome() {
+    const found = people.results.some(person => {
+        return person.location.state === 'Amazonas';
+    });
+    console.log(found);
+}
+
+function doEvery() {
+    const every = people.results.every(person => {
+        return person.nat === 'BR';
+    });
+    console.log(every);
+}
+
+function doSort() {
+    const mappedNames = people.results
+        .map(person => {
+            return {
+                name: person.name.first
+            };
+        })
+        .filter(person => person.name.startsWith('A'))
+        .sort((a, b) => {
+            return a.name.localeCompare(b.name);
+            //return a.name.length - b.name.length; //ordenar pelo tamanho do nome
+        });
+    
+    console.log(mappedNames);
+}

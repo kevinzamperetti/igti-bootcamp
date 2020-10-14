@@ -1,1 +1,15 @@
-{"nextId":1,"accounts":[]}
+{
+  "nextId": 5,
+  "accounts": [
+    {
+      "id": 1,
+      "name": "Kevin Zamperetti Schepke",
+      "balance": 6500
+    },
+    {
+      "id": 2,
+      "name": "Verônica Bueno da Rosa",
+      "balance": 1500
+    }
+  ]
+}

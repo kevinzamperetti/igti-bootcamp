@@ -2,14 +2,19 @@
   "nextId": 5,
   "accounts": [
     {
-      "id": 1,
-      "name": "Kevin Zamperetti Schepke",
-      "balance": 6500
+      "id": 2,
+      "name": "Glória Fermanda",
+      "balance": 2000
     },
     {
-      "id": 2,
+      "id": 3,
+      "name": "Kevin Zamperetti Schepke",
+      "balance": 1000
+    },
+    {
+      "id": 4,
       "name": "Verônica Bueno da Rosa",
-      "balance": 1500
+      "balance": 2000
     }
   ]
 }

@@ -121,6 +121,6 @@ router.patch("/update-balance", async (req, res, next) => {
 router.use((err, req, res, next) => {
     global.logger.error(`Método: ${req.method} - BaseURL: ${req.baseUrl} - Erro: ${err.message} `);
     res.status(400).send({ error: err.message })
-})
+});
 
 export default router;

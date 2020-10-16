@@ -1,51 +1,40 @@
 import express from "express";
-import { promises as fs } from "fs";
+import { saveGrade, editGrade, getAllGrades,
+         getTotalGradeByStudentAndSubject, getMediaGradeBySubjectAndType,
+         getBestGradesBySubjectAndType, getGradeById, deleteGradeById } from "../modules/grade.js"
 
-const { readFile, writeFile } = fs;
 const router = express.Router();
 
-//criação
 router.post("/", async (req, res, next) => {
-    try {
-        
-    } catch (err) {
-        next(err);
-    }
+    await saveGrade(req, res, next);
 });
 
-//atualização
 router.put("/", async (req, res, next) => {
-    try {
-        
-    } catch (err) {
-        next(err);
-    }
+    await editGrade(req, res, next);
 });
 
-//exclusão
-router.delete("/", async (req, res, next) => {
-    try {
-        
-    } catch (err) {
-        next(err);
-    }
-});
-
-//consulta de notas
 router.get("/", async (req, res, next) => {
-    try {
-        
-    } catch (err) {
-        next(err);
-    }
+    await getAllGrades(res, next);
+});
+
+router.get("/total", async (req, res, next) => {
+    await getTotalGradeByStudentAndSubject(req, res, next);
+});
+
+router.get("/media", async (req, res, next) => {
+    await getMediaGradeBySubjectAndType(req, res, next);
+});
+
+router.get("/best", async (req, res, next) => {
+    await getBestGradesBySubjectAndType(req, res, next);
 });
 
 router.get("/:id", async (req, res, next) => {
-    try {
-        
-    } catch (err) {
-        next(err);
-    }
+    await getGradeById(req, res, next);
+});
+
+router.delete("/:id", async (req, res, next) => {
+    await deleteGradeById(req, res, next);
 });
 
 router.use((err, req, res, next) => {

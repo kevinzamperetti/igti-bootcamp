@@ -1,5 +1,6 @@
 import express from "express";
 import winston from "winston";
+import cors from "cors";
 import { promises as fs } from "fs";
 import gradeRouter from "./routes/grade.js";
 
@@ -9,6 +10,7 @@ global.fileName = "./data/grades.json";
 //app use
 const app = express();
 app.use(express.json());
+app.use(cors());
 app.use("/grade", gradeRouter);
 
 //logger

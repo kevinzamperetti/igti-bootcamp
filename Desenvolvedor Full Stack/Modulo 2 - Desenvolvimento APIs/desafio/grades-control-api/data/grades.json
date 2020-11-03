@@ -1,5 +1,5 @@
 {
-  "nextId": 61,
+  "nextId": 50,
   "grades": [
     {
       "id": 1,
@@ -250,19 +250,11 @@
       "timestamp": "2020-05-19T18:21:25.171Z"
     },
     {
-      "id": 32,
-      "student": "Roberto Achar",
-      "subject": "04 - MongoDB",
-      "type": "Trabalho Prático",
-      "value": 16,
-      "timestamp": "2020-05-19T18:21:25.178Z"
-    },
-    {
       "id": 33,
       "student": "Roberto Achar",
       "subject": "01 - JavaScript",
       "type": "Desafio",
-      "value": 25,
+      "value": 15,
       "timestamp": "2020-05-19T18:21:25.184Z"
     },
     {
@@ -387,35 +379,11 @@
     },
     {
       "id": 49,
-      "student": "Kevin Zamperetti Schepke",
-      "subject": "01 - Java",
-      "type": "Workshop",
-      "value": "100",
-      "timestamp": "2020-10-16T01:12:56.789Z"
-    },
-    {
-      "id": 54,
-      "student": "Vanderberg Marques Nunes",
-      "subject": "99 - Delphi",
-      "type": "Curso",
-      "value": "100",
-      "timestamp": "2020-10-16T02:54:35.374Z"
-    },
-    {
-      "id": 58,
-      "student": "Vander Nunes",
-      "subject": "99 - Delphi",
-      "type": "Desafio",
-      "value": "100",
-      "timestamp": "2020-10-16T03:21:13.968Z"
-    },
-    {
-      "id": 59,
-      "student": "Vander Nunes",
-      "subject": "99 - JS",
-      "type": "Desafio",
-      "value": "70",
-      "timestamp": "2020-10-16T03:22:09.971Z"
+      "student": "Roberto Achar",
+      "subject": "03 - React",
+      "type": "Fórum",
+      "value": 10,
+      "timestamp": "2020-10-16T13:55:42.443Z"
     }
   ]
 }

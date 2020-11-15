@@ -1,0 +1,11 @@
+git clone https://github.com/brunoaugustoteixeira/grades-app.git
+
+git clone https://github.com/brunoaugustoteixeira/grades-api.git
+
+git merge origin/feature/CriaRotas
+
+git checkout -b feature/modeloMongoose
+
+git branch -D feature/CriaRotas
+
+git branch -D feature/modeloMongoose

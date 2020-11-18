@@ -35,11 +35,25 @@ const create = async (req, res) => {
 
 const findAll = async (req, res) => {
   const description = req.query.description;
+  const yearMonth = req.query.yearMonth;
+  const type = req.query.type;
 
-  //condicao para o filtro no findAll
-  var condition = description
-    ? { description: { $regex: new RegExp(description), $options: 'i' } }
+  if(yearMonth == null) {
+    res
+      .status(500)
+      .send(`É necessário informar o parâmetro "yearMonth", cujo valor deve estar no formato yyyy-mm`);
+    logger.info(`GET /api/transaction`);
+  } else {
+    //condicao para o filtro no findAll
+    var condition = description
+    ? { description: { $regex: new RegExp(description), $options: 'i' },
+        yearMonth: yearMonth}
     : {};
+    condition = description && type
+    ? { description: { $regex: new RegExp(description), $options: 'i' },
+        yearMonth: yearMonth, type: type }
+    : {};
+  }
 
   try {
     const data = await TransactionModel.find(condition);
